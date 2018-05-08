@@ -1,0 +1,44 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>注册页面</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p style="color:red">&nbsp;&nbsp;&nbsp;&nbsp;{{errMsg}}</p>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>输入账号</ion-label>
+      <ion-input [(ngModel)]="uname" name="uname" place="请输入账号"  (blur)="checkUname()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>输入密码</ion-label>
+      <ion-input [(ngModel)]="upwd" name="upwd" place="请输入密码"   (blur)="checkUpwd()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>重复密码</ion-label>
+      <ion-input [(ngModel)]="cpwd" name="cpwd" place="请重复密码"   (blur)="checkCpwd()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>手机号码</ion-label>
+      <ion-input [(ngModel)]="phone" name="phone" place="请输入手机号"  (blur)="checkPhone()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>同意细则</ion-label>
+      <ion-checkbox [(ngModel)]="isAgree"></ion-checkbox> 
+    </ion-item>
+    <ion-item>
+      <a href="">阅读细则</a>
+    </ion-item>
+  </ion-list>
+  <button ion-button block round (click)="myRegister()">注册</button>
+</ion-content>

@@ -1,0 +1,31 @@
+<!--
+  Generated template for the ProductBlockPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>商品列表</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>{{fname}}</h2>
+  <ion-list *ngIf="productBlock.length>0">
+    <ion-item *ngFor="let tmp of productBlock" [navPush]="detail" [navParams]="{plid:tmp.plid,gfid:tmp.gfid,fid:tmp.fid}">
+      <ion-thumbnail item-start>
+        <img [src]="'assets/'+tmp.g_pic" alt="">
+      </ion-thumbnail>
+      <h4>
+        {{tmp.title}}
+      </h4>
+      <p style="color:rgb(187, 64, 64);">
+        ￥{{tmp.f_price}}
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>

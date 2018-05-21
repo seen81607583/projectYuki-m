@@ -28,4 +28,15 @@
       </p>
     </ion-item>
   </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="light">
+      <ion-icon name="list"></ion-icon>
+    </button>
+    <ion-fab-list side="top" *ngIf="productFamily.length>0">
+      <button ion-fab *ngFor="let tmp of productFamily" (click)="loadProduct(tmp.fid)">
+        <img [src]="'assets/'+tmp.f_ico" alt="">
+      </button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

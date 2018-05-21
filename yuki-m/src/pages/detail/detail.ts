@@ -39,7 +39,7 @@ export class DetailPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
-    this.http.sendRequest("http://127.0.0.1/ionic_project/data/product/product_detail.php?fid="+this.fid+"&plid="+this.plid+"&gfid="+this.gfid).subscribe((res)=>{
+    this.http.sendRequest("http://1.yukiki.applinzi.com/data/product/product_detail.php?fid="+this.fid+"&plid="+this.plid+"&gfid="+this.gfid).subscribe((res)=>{
     
       var result = res;
       this.pic = result.pic;
@@ -50,7 +50,7 @@ export class DetailPage {
   }
 
   addCart(){
-    this.http.sendRequest("http://127.0.0.1/ionic_project/data/user/isLogin.php").subscribe((res)=>{
+    this.http.sendRequest("http://1.yukiki.applinzi.com/data/user/isLogin.php").subscribe((res)=>{
       if(res.code<0){
         this.http.showToast("请先登录",1500,'top');
         this.alertCtrl.create({
@@ -77,7 +77,7 @@ export class DetailPage {
           var gid = this.data[this.spec1].gid;
           var gfid = this.data[this.spec1].gfid;
           var spec1 = this.data[this.spec1].g_spec1;
-          this.http.sendRequest("http://127.0.0.1/ionic_project/data/cart/insertCart.php?gid="+gid+"&gfid="+gfid+"&spec1"+spec1).subscribe((res)=>{
+          this.http.sendRequest("http://1.yukiki.applinzi.com/data/cart/insertCart.php?gid="+gid+"&gfid="+gfid+"&spec1"+spec1).subscribe((res)=>{
             var result = res;
             this.http.showToast(result.msg,1500,'middle');
           })

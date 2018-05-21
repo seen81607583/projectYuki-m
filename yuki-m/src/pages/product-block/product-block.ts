@@ -22,6 +22,7 @@ export class ProductBlockPage {
   productBlock:Array<any> = [];
   fname:string = "";
   detail:any = null;
+  productFamily:Array<any> = [];
   constructor(public navCtrl: NavController, public navParams: NavParams,private http:HttpService) {
     this.fid = navParams.get("fid");
     this.detail = DetailPage;
@@ -29,12 +30,20 @@ export class ProductBlockPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductBlockPage');
-    console.log(this.fid);
-    this.http.sendRequest("http://127.0.0.1/ionic_project/data/product/product_list.php?fid="+this.fid).subscribe((res)=>{
-      console.log(res);
+    //console.log(this.fid);
+    this.http.sendRequest("http://1.yukiki.applinzi.com/data/product/product_list.php?fid="+this.fid).subscribe((res)=>{
+      //console.log(res);
       this.productBlock = res.data;
       this.fname = res.fname;
     })
+
+    this.http.sendRequest("http://1.yukiki.applinzi.com/data/index/aside.php").subscribe((res)=>{
+      // console.log(res);
+      this.productFamily = res.pf;
+    })
   }
 
+  loadProduct(fid){
+    this.navCtrl.push(ProductBlockPage,{fid:fid});
+  }
 }

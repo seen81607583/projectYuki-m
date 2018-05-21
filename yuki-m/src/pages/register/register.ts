@@ -37,7 +37,7 @@ export class RegisterPage {
     }
 
     if(this.errMsg===""){
-      this.http.sendRequest("http://127.0.0.1/ionic_project/data/user/register.php?uname="+this.uname+"&upwd="+this.upwd+"&phone="+this.phone).subscribe((res)=>{
+      this.http.sendRequest("http://1.yukiki.applinzi.com/data/user/register.php?uname="+this.uname+"&upwd="+this.upwd+"&phone="+this.phone).subscribe((res)=>{
         var result = res;
         if(result.code>0){
           this.http.showToast(result.msg,1500,'middle');
@@ -50,7 +50,7 @@ export class RegisterPage {
   }
 
   checkUname(){
-    this.http.sendRequestNoLoading("http://127.0.0.1/ionic_project/data/user/checkUname.php?uname="+this.uname).subscribe((res)=>{
+    this.http.sendRequestNoLoading("http://1.yukiki.applinzi.com/data/user/checkUname.php?uname="+this.uname).subscribe((res)=>{
       var result = res;
       if(result.code<0){
         this.errMsg = result.msg;

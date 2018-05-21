@@ -7,12 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>userCenter</ion-title>
+    <ion-title>用户中心</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div style="text-align:center">
+    <img 
+    style="width:100px;height:100px;border-radius:50px"
+    [src]="imageSrc" alt="">
+    <h3>{{uname}}</h3>
+    <button ion-button (click)="showActionSheet()">上传头像</button>
+    <!-- <button ion-button
+    (click)="logout()"
+     color="danger" block>
+      退出登录
+    </button> -->
+  </div>
 </ion-content>

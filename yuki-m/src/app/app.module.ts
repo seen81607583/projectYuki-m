@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
+//引入插件
+import { Camera } from '@ionic-native/camera';
 
 //服务
 import { HttpService } from './utility/service/http.service';
@@ -75,6 +77,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage
   ],
   providers: [
+    Camera,
     HttpService,
     StatusBar,
     SplashScreen,

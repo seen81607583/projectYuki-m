@@ -9,7 +9,7 @@
   <ion-grid>
     <ion-row>
       <ion-col col-2>
-        <button ion-button clear color="dark">
+        <button ion-button clear color="dark" (click)="getPicture()">
           <ion-icon name="camera"></ion-icon>
         </button>
       </ion-col>
@@ -54,16 +54,7 @@
     </div>
   </ion-scroll>
   <!-- <product-block></product-block> -->
- <ion-fab bottom right>
-   <button ion-fab color="light">
-     <ion-icon name="list"></ion-icon>
-   </button>
-   <ion-fab-list side="top">
-     <button ion-fab *ngFor="let tmp of productFamily">
-       <img [src]="'assets/'+tmp.f_ico" alt="">
-     </button>
-   </ion-fab-list>
- </ion-fab>
+ 
 
 
 </ion-content>

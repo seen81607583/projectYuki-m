@@ -39,7 +39,7 @@ export class CartPage {
   }
   ionViewWillEnter() {
     this.http
-      .sendRequest("http://127.0.0.1/ionic_project/data/user/isLogin.php")
+      .sendRequest("http://1.yukiki.applinzi.com/data/user/isLogin.php")
       .subscribe(result => {
         var res = result;
         if (res.code < 0) {
@@ -73,7 +73,7 @@ export class CartPage {
 
   loadCartList() {
     this.http
-      .sendRequest("http://127.0.0.1/ionic_project/data/cart/showCart.php")
+      .sendRequest("http://1.yukiki.applinzi.com/data/cart/showCart.php")
       .subscribe(result => {
         var res = result;
         if (res.length > 0) {
@@ -99,7 +99,7 @@ export class CartPage {
             handler: () => {
               this.http
                 .sendRequest(
-                  "http://127.0.0.1/ionic_project/data/cart/delOrder.php?cid=" +
+                  "http://1.yukiki.applinzi.com/data/cart/delOrder.php?cid=" +
                     cid
                 )
                 .subscribe(result => {

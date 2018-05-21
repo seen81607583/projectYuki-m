@@ -60,7 +60,7 @@ export class HttpService {
     }
 
     sendJsonp(uname:string,upwd:string){
-        var wikiUrl = "http://127.0.0.1/ionic_project/data/user/login.php";
+        var wikiUrl = "http://1.yukiii.applinzi.com/data/user/login.php";
         var params = new URLSearchParams();
         params.set("uname",uname);
         params.set("upwd",upwd);
